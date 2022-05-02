@@ -6,7 +6,7 @@ const { Content } = Layout
 
 export const ContentComponent = () => (
   <Layout>
-    <Content className={styles.contentContainer}>
+    <Content className={`${styles.contentContainer} overflow-y-auto`}>
       <Outlet />
     </Content>
   </Layout>

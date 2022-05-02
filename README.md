@@ -65,3 +65,8 @@ src
 # 解决方案
 
 1. 图标
+
+# 遇到的一些问题
+
+1. 浏览器提示 `Unknown at rule @tailwindcss(unknownAtRules)`  
+   解决方法：VSCode 安装 `PostCSS Language Support` 插件

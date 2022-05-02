@@ -1,3 +1,8 @@
+/* base 与 antd 冲突了 */
+/* @tailwind base;  */
+@tailwind components;
+@tailwind utilities;
+
 @import '~antd/dist/antd.css';
 
 body {
