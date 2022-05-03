@@ -1,4 +1,4 @@
-import { Request } from './index'
+import { Request } from './Request'
 import { AxiosResponse } from 'axios'
 
 import { IRequestConfig } from './ITypes'
