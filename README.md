@@ -44,6 +44,42 @@
       },
       ```
 
+# CSS 使用
+
+1. 正常 css 导入
+
+   创建 `Test.css` 文件
+
+   ```css
+   .logo {
+   }
+   ```
+
+   ```typescript
+   // 在 Test.tsx 文件中
+   import './Test.css'
+   export const Test = () => {
+     return <div className="logo"></div>
+   }
+   ```
+
+2. 模块化 css
+
+   创建 `Test.module.css` 文件
+
+   ```css
+   .logo {
+   }
+   ```
+
+   ```typescript
+   // 在 Test.tsx 文件中
+   import styles from './Test.module.css'
+   export const Test = () => {
+     return <div className={styles.logo}></div>
+   }
+   ```
+
 # 目录结构
 
 ```bash
@@ -65,6 +101,8 @@ src
 # 解决方案
 
 1. 图标
+2. css
+   解决： 管理后台尽力做到不写一行 `css`
 
 # 遇到的一些问题
 
