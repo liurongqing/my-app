@@ -106,14 +106,74 @@ src
 # 解决方案
 
 - [ ] 图标
-- [x] css
-   解决： 管理后台尽力做到不写一行 `css`
-- [ ] 接口请求
+- [x] css 
+   
+   > 引用 `tailwindcss`
+   > 管理后台尽力做到不写一行 `css`
+   
+   1. 安装
+   
+      ```bash
+      npm install tailwindcss -D
+      ```
+   
+   2. 引入
+   
+      ```css
+      /* @tailwind base;  */
+      @tailwind components;
+      @tailwind utilities;
+      ```
+   
+   3. 使用
+   
+      ```html
+      <div className="p-6"></div>
+      ```
+   
+      
+- [x] 接口请求
+
+   > 已经封装好， 详情另写
 - [ ] 状态管理 useReducer useContext
 - [ ] 完美的 Loading
 - [ ] 移动端 PWA
 - [ ] TSDOC文档
    参考链接：https://tsdoc.org/pages/packages/tsdoc/
+- [ ] 表单解决方案：显示最基本， 然后自定义，然后联动
+- [x] 别名
+
+   1. 安装  
+      ```bash
+      npm install @craco/craco -D
+      ```
+
+   2. 配置 `craco.config.js`  
+      ```javascript
+      const path = require('path')
+      module.exports = {
+         webpack: {
+            alias: {
+               '@': path.resolve(__dirname, 'src'),
+            },
+         },
+      }
+      ```
+   3. 配置 `tsconfig.json`    
+      ```json
+      {
+         "compilerOptions": {
+            "baseUrl": "./",
+            "paths": {
+               "@/*": ["./src/*"]
+            }
+         }
+      }
+      ```
+
+   
+
+
 
 # 遇到的一些问题
 

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Table, Divider, Button, Form, Input, Space } from 'antd'
 
-import { getUser } from '../../services'
+import { getUser } from '@/services'
 interface IDataType {
   id: string
   name: string
@@ -9,7 +9,7 @@ interface IDataType {
 
 export const UserList1 = () => {
   useEffect(() => {
-    getUser({ page: 1 }).then((res) => {
+    getUser({ page: 1 }).then((res: any) => {
       console.log('getuserdata', res)
     })
   }, [])

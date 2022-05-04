@@ -1,11 +1,11 @@
 // 根路径
-import { App } from '../App'
+import { App } from '@/App'
 
 // 组件
-import { UserList1, UserList2 } from '../modules'
+import { UserList1, UserList2 } from '@/modules'
 
 // 页面
-import { NotFound } from '../pages'
+import { NotFound } from '@/pages'
 
 export const routes = [
   {

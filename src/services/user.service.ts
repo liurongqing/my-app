@@ -1,5 +1,5 @@
-import { hmApi } from '../utils'
-import { API_USER } from '../constants'
+import { hmApi } from '@/utils'
+import { API_USER } from '@/constants'
 
 export const getUser = async (data: any) => {
   return await hmApi.request({
