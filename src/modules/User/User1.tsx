@@ -1,10 +1,19 @@
+import { useEffect } from 'react'
 import { Table, Divider, Button, Form, Input, Space } from 'antd'
+
+import { getUser } from '../../services'
 interface IDataType {
   id: string
   name: string
 }
 
 export const UserList1 = () => {
+  useEffect(() => {
+    getUser({ page: 1 }).then((res) => {
+      console.log('getuserdata', res)
+    })
+  }, [])
+
   const columns = [
     {
       title: 'name',

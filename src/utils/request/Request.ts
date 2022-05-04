@@ -33,6 +33,12 @@ export class Request {
       this.interceptorsObj?.requestInterceptorsCatch
     )
 
+    // 实例返回拦截
+    this.instance.interceptors.response.use(
+      this.interceptorsObj?.responseInterceptors,
+      this.interceptorsObj?.responseInterceptorsCatch
+    )
+
     // 全局响应拦截器
     this.instance.interceptors.response.use(
       (res: AxiosResponse) => {
