@@ -1,3 +1,8 @@
+---
+title: 管理后台与移动端解决方案
+date: 2022-05-04
+---
+
 [TOC]
 
 # 快速上手
@@ -100,11 +105,15 @@ src
 
 # 解决方案
 
-1. 图标
-2. css
+- [ ] 图标
+- [x] css
    解决： 管理后台尽力做到不写一行 `css`
-3. 接口请求
-4. 状态管理
+- [ ] 接口请求
+- [ ] 状态管理 useReducer useContext
+- [ ] 完美的 Loading
+- [ ] 移动端 PWA
+- [ ] TSDOC文档
+   参考链接：https://tsdoc.org/pages/packages/tsdoc/
 
 # 遇到的一些问题
 

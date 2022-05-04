@@ -14,7 +14,3 @@ export interface IRequestInterceptors<T> {
 export interface IRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
   interceptors?: IRequestInterceptors<T>
 }
-
-export interface ICancelRequestSource {
-  [index: string]: () => void
-}

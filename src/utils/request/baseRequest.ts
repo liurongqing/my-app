@@ -17,12 +17,15 @@ interface IBaseRequestConfig<T, R> extends IRequestConfig<IBaseResponse<R>> {
 export const baseRequest = (instanceConfig: any) => {
   const request = new Request(instanceConfig)
 
-  return <D = any, T = any>(config: IBaseRequestConfig<D, T>) => {
-    const { method = 'GET' } = config
-    if (['get', 'GET'].includes(method)) {
-      config.params = config.data
-    }
-    return request.request<IBaseResponse<T>>(config)
+  return {
+    request: <D = any, T = any>(config: IBaseRequestConfig<D, T>) => {
+      const { method = 'GET' } = config
+      if (['get', 'GET'].includes(method)) {
+        config.params = config.data
+      }
+      return request.request<IBaseResponse<T>>(config)
+    },
+    cancelRequest: request.cancelRequest,
+    cancelAllRequest: request.cancelAllRequest,
   }
 }
-
