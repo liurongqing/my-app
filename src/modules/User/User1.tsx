@@ -1,16 +1,16 @@
-import { useEffect, useContext } from 'react'
+import { useEffect } from 'react'
 import { Table, Divider, Button, Form, Input, Space } from 'antd'
-import { CommonContext, CommonDispatchContext, ICommonState } from '@/reducers'
 import { getUser } from '@/services'
+import { useCommonState, useCommonDispatch } from '@/hooks'
 interface IDataType {
   id: string
   name: string
 }
 
 export const UserList1 = () => {
-  const state = useContext(CommonContext)
-  const dispatch = useContext(CommonDispatchContext)
-
+  const state = useCommonState()
+  const dispatch = useCommonDispatch()
+  
   useEffect(() => {
     getUser({ page: 1 }).then((res: any) => {
       console.log('getuserdata', res)
@@ -32,7 +32,10 @@ export const UserList1 = () => {
 
   function handleSearch() {
     dispatch({
-      type: 'resetname',
+      type: 'setname',
+      payload: {
+        name: 'lllll',
+      },
     })
   }
 

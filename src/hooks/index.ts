@@ -1,1 +1,2 @@
-export const a = []
+export * from './useCommonDispatch'
+export * from './useCommonState'
