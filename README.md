@@ -100,13 +100,19 @@ src
     - reducer # 当前模板内的 reducer
   - pages # 单独的页面，如404、登录页面
   - services # 公用服务数据处理
-  - store # 全局通用值
+  - reducers # 全局通用值
   - utils # 一些通用方法，可跨项目使用
 ```
 
 # 解决方案
 
 - [ ] 图标
+- [ ] 完美的 Loading
+- [ ] 移动端 PWA
+- [ ] TSDOC文档
+   参考链接：https://tsdoc.org/pages/packages/tsdoc/
+- [ ] 表单解决方案：显示最基本， 然后自定义，然后联动
+
 - [x] css 
    
    > 引用 `tailwindcss`
@@ -132,16 +138,10 @@ src
       <div className="p-6"></div>
       ```
    
-      
+   
 - [x] 接口请求
-
    > 已经封装好， 详情另写
-- [ ] 状态管理 useReducer useContext
-- [ ] 完美的 Loading
-- [ ] 移动端 PWA
-- [ ] TSDOC文档
-   参考链接：https://tsdoc.org/pages/packages/tsdoc/
-- [ ] 表单解决方案：显示最基本， 然后自定义，然后联动
+- [x] 状态管理 useReducer useContext
 - [x] 别名
 
    1. 安装  

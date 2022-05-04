@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useReducer } from 'react'
 import { Table, Divider, Button, Form, Input, Space } from 'antd'
 import { getUser } from '@/services'
 import { useCommonState, useCommonDispatch } from '@/hooks'
+import { initialUser, userReducer } from './reducers'
 interface IDataType {
   id: string
   name: string
@@ -10,7 +11,9 @@ interface IDataType {
 export const UserList1 = () => {
   const state = useCommonState()
   const dispatch = useCommonDispatch()
-  
+
+  const [users, userDispatch] = useReducer(userReducer, initialUser)
+
   useEffect(() => {
     getUser({ page: 1 }).then((res: any) => {
       console.log('getuserdata', res)
@@ -31,18 +34,24 @@ export const UserList1 = () => {
   ]
 
   function handleSearch() {
-    dispatch({
-      type: 'setname',
-      payload: {
-        name: 'lllll',
-      },
+    userDispatch({
+      type: 'added'
     })
+    // dispatch({
+    //   type: 'setname',
+    //   payload: {
+    //     name: 'lllll',
+    //   },
+    // })
   }
 
   return (
     <>
       <div className="search-container">
         {state.name}
+        {users?.map((v) => (
+          <li>{v.name}</li>
+        ))}
         <Form layout="inline">
           <Space wrap>
             <Form.Item label="name">
