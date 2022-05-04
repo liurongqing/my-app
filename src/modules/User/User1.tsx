@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { Table, Divider, Button, Form, Input, Space } from 'antd'
-
+import { CommonContext, CommonDispatchContext, ICommonState } from '@/reducers'
 import { getUser } from '@/services'
 interface IDataType {
   id: string
@@ -8,6 +8,9 @@ interface IDataType {
 }
 
 export const UserList1 = () => {
+  const state = useContext(CommonContext)
+  const dispatch = useContext(CommonDispatchContext)
+
   useEffect(() => {
     getUser({ page: 1 }).then((res: any) => {
       console.log('getuserdata', res)
@@ -27,9 +30,16 @@ export const UserList1 = () => {
     },
   ]
 
+  function handleSearch() {
+    dispatch({
+      type: 'resetname',
+    })
+  }
+
   return (
     <>
       <div className="search-container">
+        {state.name}
         <Form layout="inline">
           <Space wrap>
             <Form.Item label="name">
@@ -51,7 +61,9 @@ export const UserList1 = () => {
               <Input />
             </Form.Item>
             <Button>重 置</Button>
-            <Button type="primary">搜 索</Button>
+            <Button type="primary" onClick={handleSearch}>
+              搜 索
+            </Button>
           </Space>
         </Form>
       </div>

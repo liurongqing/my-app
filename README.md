@@ -100,6 +100,7 @@ src
     - reducer # 当前模板内的 reducer
   - pages # 单独的页面，如404、登录页面
   - services # 公用服务数据处理
+  - store # 全局通用值
   - utils # 一些通用方法，可跨项目使用
 ```
 

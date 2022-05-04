@@ -1,5 +1,5 @@
 // 根路径
-import { App } from '@/App'
+import { LayoutComponent } from '@/components/Layout'
 
 // 组件
 import { UserList1, UserList2 } from '@/modules'
@@ -11,7 +11,7 @@ export const routes = [
   {
     path: '/',
     key: '/',
-    element: <App />,
+    element: <LayoutComponent />,
     children: [
       {
         path: 'user1',
